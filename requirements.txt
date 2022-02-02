@@ -1,0 +1,8 @@
+torch
+transformers
+Pillow
+opencv-contrib-python-headless
+pandas
+tqdm
+albumentations
+scikit-learn
