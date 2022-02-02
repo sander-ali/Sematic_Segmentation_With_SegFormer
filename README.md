@@ -4,13 +4,13 @@ The code uses SegFormer for Semantic Segmentation on Drone Dataset. The details 
 If you want to train the SegFormer on the drone dataset. Make sure that the directory structure is as follows:  
 root  
 | drone_dataset  
-|-|---images  
+|---images  
 |----|---test  
 |----|---train  
-|-|---mask  
+|---mask  
 |----|---test  
 |----|---train  
-|-|---class_dict_seg.csv  
+|---class_dict_seg.csv  
 
 ## Citations and References
 ```
