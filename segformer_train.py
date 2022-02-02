@@ -121,23 +121,7 @@ for ep in range(1,15):
         sl.set_postfix({'Batch': idx, 'Pixel-wise acc': sum(tr_acc)/len(tr_acc), 'loss': sum(tr_loss)/len(tr_loss)})
         loss.backward()
         opt.step()
-    else:
-        mdl.eval()
-        with torch.no_grad():
-            for idx, batch in enumerate(vl_dloader):
-                pval = batch["pixel_values"].to(dev)
-                gt = batch["labels"].to(dev)
-                out = mdl(pixel_values = pval, labels = gt)
-                uplog = nn.functional.interpolate(out.logits, size = gt.shape[-2:], mode="bilinear", align_corners=False)
-                pred = uplog.argmax(dim=1)
-                
-                mask = (gt != 255)
-                pred_class = pred[mask].detach().cpu().numpy()
-                gt_class = gt[mask].detach().cpu().numpy()
-                acc = accuracy_score(pred_class, gt_class)
-                valloss = out.loss
-                vl_acc.append(acc)
-                vl_loss.append(valloss.item())
+  
     print(f"Pixel-wise Train Accuracy: {sum(tr_acc)/len(tr_acc)}\
           Train Loss: {sum(tr_loss)/len(tr_loss)}\
               Pixel-wise Validation Accuracy: {sum(vl_acc)/len(vl_acc)}\
