@@ -1,16 +1,16 @@
 # SegFormer_Segmentation
 The code uses SegFormer for Semantic Segmentation on Drone Dataset. The details for the SegFormer can be obtained from the following cited paper and the drone dataset can be downloaded from the link below. Alternatively, you can also download the dataset from Kaggle, the link is mentioned below. Clone the repository and install all the packages mentioned in the requirement.txt file. If you just want to infer the semantic segmentation, open the segformer_inf.py, change the image file name you want to test and run the code. Make sure the trained model is in the model folder. You can download the model at https://drive.google.com/file/d/1zsHyMlGJCpPZrDB0v3ZeaogTcUULmUVB/view?usp=sharing. Alternatively, you can train the model and save the model, locally.
 
-If you want to train the SegFormer on the drone dataset. Make sure that the directory structure is as follows:
+If you want to train the SegFormer on the drone dataset. Make sure that the directory structure is as follows:  
 root  
 |_drone_dataset  
-  |_images  
-    |_test  
-    |_train  
-  |_mask  
-    |_test  
-    |_train  
-  |_class_dict_seg.csv  
+|_|__images  
+|____|___test  
+|____|___train  
+|_|__mask  
+|____|_test  
+|____|_train  
+|_|__class_dict_seg.csv  
 
 ## Citations and References
 ```
