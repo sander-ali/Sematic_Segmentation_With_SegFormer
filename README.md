@@ -18,6 +18,9 @@ root
 |----|---train  
 |---class_dict_seg.csv  
 
+Demo Inference
+https://github.com/sander-ali/Sematic_Segmentation_With_SegFormer/blob/main/demo_inf.png?raw=true
+
 ## Citations and References
 ```
 SegFormer
